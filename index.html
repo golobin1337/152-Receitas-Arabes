@@ -8,23 +8,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
 <!-- 1. Hero -->
 <header class="hero">
-  <nav class="topbar wrap">
-    <span class="logo"><span class="logo-dot"></span>152 Receitas Árabes</span>
-    <a href="#planos" class="topbar-link">Ver planos</a>
-  </nav>
-
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <span class="eyebrow">E-book digital ilustrado</span>
-      <h1><span class="hl">152 Receitas Árabes</span> para Fazer em Casa com Sabor de Restaurante, Mesmo Sem Experiência na Cozinha.</h1>
-      <p class="lead">Prepare esfihas, quibes, shawarmas, pães sírios e outras delícias com ingredientes na medida certa, temperos especiais e passo a passo simples.</p>
-      <p class="lead-2">Receitas práticas para surpreender sua família, economizar e preparar pratos deliciosos sem complicação!</p>
+      <h1><span class="hl">152 Receitas Árabes</span> para Fazer em Casa</h1>
+      <h3><span class="hl">com Sabor de Restaurante, Mesmo Sem Experiência na Cozinha.</h3>
+      <p class="lead">Prepare esfihas, quibes, shawarmas, pães sírios e outras delícias com ingredientes na medida certa, temperos especiais, gastando pouco e com passo a passo simples.</p>
       <a href="#planos" class="btn">Quero minhas 152 receitas árabes!</a>
       <div class="trust"><span>Acesso imediato</span><span>Pagamento único</span><span>Garantia de 15 dias</span></div>
     </div>
@@ -64,8 +58,6 @@
       <li>Substituições para ingredientes difíceis de encontrar.</li>
       <li>Truques para evitar os erros mais comuns.</li>
     </ul>
-
-    <div class="note-box">Tudo organizado em um e-book digital ilustrado para você escolher sua receita e começar a preparar!</div>
   </div>
 </section>
 
@@ -137,7 +129,7 @@
     <p class="section-sub">Simples, rápido e direto no seu celular ou computador.</p>
     <div class="steps">
       <div class="step"><h3>Escolha seu plano</h3><p>Selecione a opção que combina com você e finalize a compra.</p></div>
-      <div class="step"><h3>Acesse seu e-book</h3><p>Receba acesso imediato ao material digital em PDF.</p></div>
+      <div class="step"><h3>Acesse seu livro digital</h3><p>Receba acesso imediato ao material digital em PDF.</p></div>
       <div class="step"><h3>Escolha, Prepare e Saboreie!</h3><p>Siga as receitas e comece a preparar suas delícias árabes em casa.</p></div>
     </div>
   </div>
@@ -157,11 +149,11 @@
           <li>152 receitas com passo a passo.</li>
           <li>Ingredientes e temperos na medida certa.</li>
           <li>Tempo de preparo, rendimento e conservação.</li>
-          <li>E-book digital ilustrado.</li>
+          <li>Livro digital ilustrado.</li>
           <li>Acesso imediato.</li>
         </ul>
         <div class="from">De <s>R$ 47,00</s> por apenas</div>
-        <div class="price"><small>R$</small>10,00</div>
+        <div class="price"><small>R$</small>10<span class="cents">,00</span></div>
         <div class="once">Pagamento único.</div>
         <!-- Troque o href pelo link de checkout do Plano Básico -->
         <a href="#" class="btn secondary block" data-checkout="basico">Quero o Plano Básico!</a>
@@ -173,16 +165,29 @@
         <h3>152 Receitas Árabes + 5 Bônus Especiais</h3>
         <ul>
           <li>Tudo do Plano Básico.</li>
-          <li class="gift">12 Misturas de Temperos Árabes.</li>
-          <li class="gift">20 Substituições de Ingredientes Árabes.</li>
-          <li class="gift">15 Soluções para Erros Comuns.</li>
-          <li class="gift">10 Cardápios Árabes Prontos.</li>
-          <li class="gift">Segredos para Acertar os Clássicos da Culinária Árabe.</li>
           <li class="hl">R$ 185,00 em bônus gratuitos.</li>
           <li>Acesso imediato.</li>
         </ul>
+
+        <div class="bonus-box">
+          <div class="bonus-box-head">
+            <span class="bonus-box-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>
+              + 5 bônus inclusos
+            </span>
+            <span class="bonus-box-tag">Grátis</span>
+          </div>
+          <ol class="bonus-list">
+            <li><span>12 Misturas de Temperos Árabes</span><s>R$ 37</s></li>
+            <li><span>20 Substituições de Ingredientes Árabes</span><s>R$ 27</s></li>
+            <li><span>15 Soluções para Erros Comuns</span><s>R$ 37</s></li>
+            <li><span>10 Cardápios Árabes Prontos</span><s>R$ 47</s></li>
+            <li><span>Segredos para Acertar os Clássicos da Culinária Árabe</span><s>R$ 37</s></li>
+          </ol>
+        </div>
+
         <div class="from">De <s>R$ 97,00</s> por apenas</div>
-        <div class="price"><small>R$</small>19,00</div>
+        <div class="price"><small>R$</small>19<span class="cents">,00</span></div>
         <div class="once">Pagamento único. Sem mensalidades.</div>
         <!-- Troque o href pelo link de checkout do Plano Premium -->
         <a href="#" class="btn block" data-checkout="premium">Quero as 152 receitas + 5 bônus!</a>
@@ -218,7 +223,7 @@
       </details>
       <details>
         <summary>Como vou receber as receitas?</summary>
-        <p>Você recebe acesso imediato ao e-book digital em PDF após a confirmação da compra.</p>
+        <p>Você recebe acesso imediato ao livro digital em PDF após a confirmação da compra.</p>
       </details>
       <details>
         <summary>Consigo acessar pelo celular?</summary>
@@ -252,13 +257,13 @@
 
 <footer>
   <p>© 2026 152 Receitas Árabes · Todos os direitos reservados.</p>
-  <p>Este produto é um e-book digital em PDF. Nenhum item físico será enviado.</p>
+  <p>Este produto é um livro digital em PDF. Nenhum item físico será enviado.</p>
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
   <a href="#planos" class="btn block">Quero minhas 152 receitas!</a>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
