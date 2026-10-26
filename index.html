@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=21">
 
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -62,6 +62,36 @@
     </ul>
   </div>
 </section>
+
+<!-- Amostra do livro (carrossel). Coloque as páginas em assets/receita-1.webp, receita-2.webp... -->
+<section class="sample">
+  <div class="wrap">
+    <h2 class="section-title sample-title">Veja algumas receitas<br><span>que você recebe</span></h2>
+
+    <div class="carousel" id="carousel">
+      <figure class="slide"><img src="assets/receita-1.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
+      <figure class="slide"><img src="assets/receita-2.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
+      <figure class="slide"><img src="assets/receita-3.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
+      <figure class="slide"><img src="assets/receita-4.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
+      <figure class="slide"><img src="assets/receita-5.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
+      <figure class="slide"><img src="assets/receita-6.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
+    </div>
+
+    <div class="carousel-nav">
+      <button type="button" class="carousel-arrow" data-dir="-1" aria-label="Receita anterior">‹</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button type="button" class="carousel-arrow" data-dir="1" aria-label="Próxima receita">›</button>
+    </div>
+    <p class="carousel-hint">Arraste para ver mais ›</p>
+
+    <div class="sample-cta"><a href="#planos" class="btn">Quero minhas 152 receitas árabes!</a></div>
+  </div>
+</section>
+
+<dialog class="lightbox" id="lightbox">
+  <button type="button" class="lightbox-close" aria-label="Fechar">×</button>
+  <img alt="">
+</dialog>
 
 <!-- 3. Depoimentos -->
 <section>
@@ -254,6 +284,6 @@
   <a href="#planos" class="btn block">Quero minhas 152 receitas!</a>
 </div>
 
-<script src="script.js?v=18"></script>
+<script src="script.js?v=21"></script>
 </body>
 </html>

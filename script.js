@@ -18,3 +18,48 @@ new IntersectionObserver(([e]) => {
 // Faixa de promoção: mostra sempre a data de hoje
 const promoDate = document.getElementById("promoDate");
 if (promoDate) promoDate.textContent = " - " + new Date().toLocaleDateString("pt-BR");
+
+// Carrossel da amostra do livro
+const carousel = document.getElementById("carousel");
+if (carousel) {
+  const slides = [...carousel.querySelectorAll(".slide")];
+  const dots = document.getElementById("carouselDots");
+  const lightbox = document.getElementById("lightbox");
+  let current = 0;
+
+  // Enquanto a imagem não existir, mostra o espaço reservado
+  slides.forEach(s => s.querySelector("img").addEventListener("error", e => e.target.remove()));
+
+  slides.forEach((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-label", "Ver receita " + (i + 1));
+    b.addEventListener("click", () => goTo(i));
+    dots.appendChild(b);
+  });
+
+  const goTo = i => {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    carousel.scrollTo({ left: slides[i].offsetLeft - (carousel.clientWidth - slides[i].clientWidth) / 2, behavior: "smooth" });
+  };
+  const setActive = i => { current = i; [...dots.children].forEach((d, j) => d.classList.toggle("on", j === i)); };
+  setActive(0);
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) setActive(slides.indexOf(e.target)); });
+  }, { root: carousel, threshold: 0.6 });
+  slides.forEach(s => io.observe(s));
+
+  document.querySelectorAll(".carousel-arrow").forEach(a =>
+    a.addEventListener("click", () => goTo(current + Number(a.dataset.dir))));
+
+  // Toque para ampliar
+  slides.forEach(s => s.addEventListener("click", () => {
+    const img = s.querySelector("img");
+    if (!img) return;
+    lightbox.querySelector("img").src = img.src;
+    lightbox.querySelector("img").alt = img.alt;
+    lightbox.showModal();
+  }));
+  lightbox.addEventListener("click", () => lightbox.close());
+}
