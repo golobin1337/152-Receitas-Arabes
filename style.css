@@ -104,7 +104,8 @@ section { padding: 96px 0; }
 .bonus-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
 .bonus { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; display: flex; flex-direction: column; gap: 14px; }
 .bonus-head { display: flex; align-items: center; gap: 14px; }
-.bonus-head .ico { width: 52px; height: 52px; border-radius: 14px; background: var(--olive-soft); display: grid; place-items: center; font-size: 26px; flex-shrink: 0; }
+.bonus-cover { display: grid; place-items: center; background: var(--bg-alt); border-radius: 14px; padding: 16px; }
+.bonus-cover img { display: block; width: 100%; max-width: 200px; height: auto; border-radius: 8px; }
 .bonus-head small { display: block; font-size: 12px; font-weight: 600; color: var(--olive); text-transform: uppercase; letter-spacing: .06em; }
 .bonus-head h3 { font-size: 17px; }
 .bonus-body { flex: 1; display: flex; flex-direction: column; gap: 16px; }
