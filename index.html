@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=21">
+<link rel="stylesheet" href="style.css?v=25">
 
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -43,7 +43,7 @@
 <!-- 2. O que você recebe -->
 <section class="alt">
   <div class="wrap">
-    <h2 class="section-title">Tudo o Que Você Precisa para <span>Preparar Comida Árabe em Casa!</span></h2>
+    <h2 class="section-title">Tudo o Que Você Precisa para <span class="destaque">Preparar Comida Árabe em Casa!</span></h2>
     <p class="section-sub">Com as 152 Receitas Árabes, você recebe:</p>
 
     <div class="dishes" aria-label="Exemplos de pratos">
@@ -63,18 +63,17 @@
   </div>
 </section>
 
-<!-- Amostra do livro (carrossel). Coloque as páginas em assets/receita-1.webp, receita-2.webp... -->
+<!-- Amostra do livro (carrossel). Para adicionar páginas, copie uma linha <figure class="slide"> -->
 <section class="sample">
   <div class="wrap">
-    <h2>Veja algumas receitas<br><span>que você recebe</span></h2>
+    <h2 class="section-title">Veja algumas receitas<br><span class="destaque">que você recebe</span></h2>
 
     <div class="carousel" id="carousel">
-      <figure class="slide"><img src="assets/receita-1.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
-      <figure class="slide"><img src="assets/receita-2.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
-      <figure class="slide"><img src="assets/receita-3.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
-      <figure class="slide"><img src="assets/receita-4.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
-      <figure class="slide"><img src="assets/receita-5.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
-      <figure class="slide"><img src="assets/receita-6.webp" alt="Página de receita do livro 152 Receitas Árabes" loading="lazy"></figure>
+      <figure class="slide"><img src="assets/receita-esfiha.webp" alt="Página da receita Esfiha Aberta de Carne, com ingredientes, valores nutricionais e modo de preparo em 8 passos" loading="lazy"></figure>
+      <figure class="slide"><img src="assets/receita-quibe.webp" alt="Página da receita Quibe Frito Tradicional, com ingredientes, valores nutricionais e modo de preparo em 8 passos" loading="lazy"></figure>
+      <figure class="slide"><img src="assets/receita-shawarma.webp" alt="Página da receita Shawarmas de Carne Bovina, com ingredientes, valores nutricionais e modo de preparo em 8 passos" loading="lazy"></figure>
+      <figure class="slide"><img src="assets/receita-pao-sirio.webp" alt="Página da receita Pães Sírios, com ingredientes, valores nutricionais e modo de preparo em 8 passos" loading="lazy"></figure>
+      <figure class="slide"><img src="assets/receita-tabule.webp" alt="Página da receita Tabule Tradicional, com ingredientes, valores nutricionais e modo de preparo em 8 passos" loading="lazy"></figure>
     </div>
 
     <div class="carousel-nav">
@@ -108,7 +107,7 @@
 <!-- 4. Bônus -->
 <section class="alt">
   <div class="wrap">
-    <h2 class="section-title">Você Ainda Recebe<span> <br>5 Bônus Especiais!</h2></span>
+    <h2 class="section-title">Você Ainda Recebe<span class="destaque"> <br>5 Bônus Especiais!</h2></span>
     <p class="section-sub">Além das 152 receitas, no Plano Completo você leva gratuitamente:</p>
 
     <div class="bonus-grid">
@@ -232,6 +231,27 @@
   </div>
 </section>
 
+<!-- Depoimentos de clientes: cadastre os depoimentos reais em DEPOIMENTOS no script.js. A seção só aparece quando houver pelo menos um. -->
+<section class="reviews" id="depoimentos" hidden>
+  <div class="wrap">
+    <h2 class="section-title">O que estão dizendo<br><span class="destaque">sobre as receitas</span></h2>
+    <p class="section-sub">Veja o que quem já comprou está falando.</p>
+
+    <div class="rating-card">
+      <div class="rating-score">
+        <b id="ratingAvg"></b>
+        <div class="rating-stars" id="ratingStars"></div>
+        <small id="ratingCount"></small>
+      </div>
+      <div class="rating-bars" id="ratingBars"></div>
+    </div>
+
+    <div class="reviews-grid" id="reviewsGrid"></div>
+
+    <div class="sample-cta"><a href="#planos" class="btn">Quero minhas 152 receitas árabes!</a></div>
+  </div>
+</section>
+
 <!-- 8. FAQ -->
 <section class="alt">
   <div class="wrap narrow">
@@ -284,6 +304,6 @@
   <a href="#planos" class="btn block">Quero minhas 152 receitas!</a>
 </div>
 
-<script src="script.js?v=21"></script>
+<script src="script.js?v=25"></script>
 </body>
 </html>

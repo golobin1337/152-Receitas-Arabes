@@ -63,3 +63,63 @@ if (carousel) {
   }));
   lightbox.addEventListener("click", () => lightbox.close());
 }
+
+// Depoimentos de clientes — cadastre aqui SOMENTE depoimentos reais, com autorização do cliente.
+// A nota média, as barras e o total de avaliações são calculados a partir desta lista.
+// Exemplo (remova as barras // para usar):
+// { nome: "Nome S.", data: "27 de outubro de 2026", nota: 5, texto: "O que o cliente escreveu.", foto: "assets/depoimento-1.webp" },
+const DEPOIMENTOS = [
+];
+
+const reviewsSection = document.getElementById("depoimentos");
+if (reviewsSection && DEPOIMENTOS.length) {
+  const colors = ["#5b7b3a", "#e8763a", "#1f9d55", "#8a5a9e", "#2f7fb5"];
+  const stars = n => "★".repeat(n) + "☆".repeat(5 - n);
+  const el = (tag, cls, text) => {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  };
+
+  const total = DEPOIMENTOS.length;
+  const avg = DEPOIMENTOS.reduce((s, d) => s + d.nota, 0) / total;
+  document.getElementById("ratingAvg").textContent = avg.toFixed(1).replace(".", ",");
+  document.getElementById("ratingStars").textContent = stars(Math.round(avg));
+  document.getElementById("ratingCount").textContent = total + (total === 1 ? " avaliação" : " avaliações");
+
+  const bars = document.getElementById("ratingBars");
+  for (let n = 5; n >= 1; n--) {
+    const pct = Math.round(DEPOIMENTOS.filter(d => d.nota === n).length / total * 100);
+    const row = el("div", "rating-row");
+    const track = el("div", "rating-track");
+    const fill = el("i");
+    fill.style.width = pct + "%";
+    track.appendChild(fill);
+    row.append(el("span", "", n + (n === 1 ? " estrela" : " estrelas")), track, el("span", "", pct + "%"));
+    bars.appendChild(row);
+  }
+
+  const grid = document.getElementById("reviewsGrid");
+  DEPOIMENTOS.forEach((d, i) => {
+    const card = el("article", "review");
+    const initials = d.nome.split(" ").map(p => p[0]).join("").slice(0, 2).toUpperCase();
+    const avatar = el("div", "review-avatar", initials);
+    avatar.style.background = colors[i % colors.length];
+    const who = el("div");
+    who.append(el("b", "", d.nome), el("small", "", d.data || ""));
+    const author = el("div", "review-author");
+    author.append(avatar, who);
+    card.append(el("div", "review-stars", stars(d.nota)), author, el("p", "", d.texto));
+    if (d.foto) {
+      const img = el("img");
+      img.src = d.foto;
+      img.alt = "Foto enviada por " + d.nome;
+      img.loading = "lazy";
+      card.appendChild(img);
+    }
+    grid.appendChild(card);
+  });
+
+  reviewsSection.hidden = false;
+}
