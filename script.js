@@ -19,30 +19,33 @@ new IntersectionObserver(([e]) => {
 const promoDate = document.getElementById("promoDate");
 if (promoDate) promoDate.textContent = " - " + new Date().toLocaleDateString("pt-BR");
 
-// Carrossel da amostra do livro
-const carousel = document.getElementById("carousel");
-if (carousel) {
+// Carrosséis (amostra do livro e depoimentos) — cada .carousel-block funciona sozinho
+const lightbox = document.getElementById("lightbox");
+if (lightbox) lightbox.addEventListener("click", () => lightbox.close());
+
+document.querySelectorAll(".carousel-block").forEach(block => {
+  const carousel = block.querySelector(".carousel");
   const slides = [...carousel.querySelectorAll(".slide")];
-  const dots = document.getElementById("carouselDots");
-  const lightbox = document.getElementById("lightbox");
+  const dots = block.querySelector(".carousel-dots");
   let current = 0;
 
   // Enquanto a imagem não existir, mostra o espaço reservado
   slides.forEach(s => s.querySelector("img").addEventListener("error", e => e.target.remove()));
 
+  const goTo = i => {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    const c = carousel.getBoundingClientRect(), s = slides[i].getBoundingClientRect();
+    carousel.scrollBy({ left: s.left - c.left - (c.width - s.width) / 2, behavior: "smooth" });
+  };
+  const setActive = i => { current = i; [...dots.children].forEach((d, j) => d.classList.toggle("on", j === i)); };
+
   slides.forEach((_, i) => {
     const b = document.createElement("button");
     b.type = "button";
-    b.setAttribute("aria-label", "Ver receita " + (i + 1));
+    b.setAttribute("aria-label", "Ver imagem " + (i + 1));
     b.addEventListener("click", () => goTo(i));
     dots.appendChild(b);
   });
-
-  const goTo = i => {
-    i = Math.max(0, Math.min(slides.length - 1, i));
-    carousel.scrollTo({ left: slides[i].offsetLeft - (carousel.clientWidth - slides[i].clientWidth) / 2, behavior: "smooth" });
-  };
-  const setActive = i => { current = i; [...dots.children].forEach((d, j) => d.classList.toggle("on", j === i)); };
   setActive(0);
 
   const io = new IntersectionObserver(entries => {
@@ -50,19 +53,18 @@ if (carousel) {
   }, { root: carousel, threshold: 0.6 });
   slides.forEach(s => io.observe(s));
 
-  document.querySelectorAll(".carousel-arrow").forEach(a =>
+  block.querySelectorAll(".carousel-arrow").forEach(a =>
     a.addEventListener("click", () => goTo(current + Number(a.dataset.dir))));
 
   // Toque para ampliar
   slides.forEach(s => s.addEventListener("click", () => {
     const img = s.querySelector("img");
-    if (!img) return;
+    if (!img || !lightbox) return;
     lightbox.querySelector("img").src = img.src;
     lightbox.querySelector("img").alt = img.alt;
     lightbox.showModal();
   }));
-  lightbox.addEventListener("click", () => lightbox.close());
-}
+});
 
 // Depoimentos de clientes — cadastre aqui SOMENTE depoimentos reais, com autorização do cliente.
 // A nota média, as barras e o total de avaliações são calculados a partir desta lista.

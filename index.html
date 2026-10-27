@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=25">
+<link rel="stylesheet" href="style.css?v=27">
 
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -68,7 +68,8 @@
   <div class="wrap">
     <h2 class="section-title">Veja algumas receitas<br><span class="destaque">que você recebe</span></h2>
 
-    <div class="carousel" id="carousel">
+    <div class="carousel-block">
+    <div class="carousel">
       <figure class="slide"><img src="assets/receita-esfiha.webp" alt="Página da receita Esfiha Aberta de Carne, com ingredientes, valores nutricionais e modo de preparo em 8 passos" loading="lazy"></figure>
       <figure class="slide"><img src="assets/receita-quibe.webp" alt="Página da receita Quibe Frito Tradicional, com ingredientes, valores nutricionais e modo de preparo em 8 passos" loading="lazy"></figure>
       <figure class="slide"><img src="assets/receita-shawarma.webp" alt="Página da receita Shawarmas de Carne Bovina, com ingredientes, valores nutricionais e modo de preparo em 8 passos" loading="lazy"></figure>
@@ -78,10 +79,11 @@
 
     <div class="carousel-nav">
       <button type="button" class="carousel-arrow" data-dir="-1" aria-label="Receita anterior">‹</button>
-      <div class="carousel-dots" id="carouselDots"></div>
+      <div class="carousel-dots"></div>
       <button type="button" class="carousel-arrow" data-dir="1" aria-label="Próxima receita">›</button>
     </div>
     <p class="carousel-hint">Arraste para ver mais ›</p>
+    </div>
 
     <div class="sample-cta"><a href="#planos" class="btn">Quero minhas 152 receitas árabes!</a></div>
   </div>
@@ -96,10 +98,21 @@
 <section>
   <div class="wrap narrow">
     <h2 class="section-title">Quem Experimenta, Conta!</h2>
-    <div class="testimonial-empty">
-      <div class="stars" aria-hidden="true">★★★★★</div>
-      <p><strong>Queremos conhecer os resultados de quem preparar nossas receitas em casa.</strong></p>
-      <p>Os depoimentos reais dos primeiros compradores serão publicados aqui assim que estiverem disponíveis.</p>
+    <p class="section-sub">Mensagens que recebemos de quem já preparou as receitas em casa.</p>
+
+    <div class="carousel-block">
+      <div class="carousel carousel-chat">
+        <figure class="slide"><img src="assets/depoimento-clarice.webp" alt="Mensagem de Clarice Queiroz: fez o quibe assado do livro e achou super saboroso e bem temperado, com foto do quibe" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/depoimento-carla.webp" alt="Mensagem de Carla Souza: fez a esfiha aberta de carne, a massa ficou macia e a família gostou, com foto das esfihas" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/depoimento-eduarda.webp" alt="Mensagem de Eduarda Santos: fez kafta com arroz e tabule, ficou leve e gostosa, com foto do prato" loading="lazy"></figure>
+      </div>
+
+      <div class="carousel-nav">
+        <button type="button" class="carousel-arrow" data-dir="-1" aria-label="Depoimento anterior">‹</button>
+        <div class="carousel-dots"></div>
+        <button type="button" class="carousel-arrow" data-dir="1" aria-label="Próximo depoimento">›</button>
+      </div>
+      <p class="carousel-hint">Arraste para ver mais ›</p>
     </div>
   </div>
 </section>
@@ -301,9 +314,14 @@
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <a href="#planos" class="btn block">Quero minhas 152 receitas!</a>
+  <div class="sticky-info">
+    <b>Plano Completo + 5 Bônus</b>
+    <small>de <s>R$ 97,00</s> por apenas</small>
+    <strong>R$ 19,90</strong>
+  </div>
+  <a href="#planos" class="sticky-btn" data-checkout="premium">Quero agora</a>
 </div>
 
-<script src="script.js?v=25"></script>
+<script src="script.js?v=27"></script>
 </body>
 </html>
