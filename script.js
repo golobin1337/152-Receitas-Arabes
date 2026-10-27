@@ -71,6 +71,11 @@ document.querySelectorAll(".carousel-block").forEach(block => {
 // Exemplo (remova as barras // para usar):
 // { nome: "Nome S.", data: "27 de outubro de 2026", nota: 5, texto: "O que o cliente escreveu.", foto: "assets/depoimento-1.webp" },
 const DEPOIMENTOS = [
+  { nome: "Maria F.", data: "18 de abril de 2025", nota: 5, texto: "Eu sempre achei muito difícil fazer comida árabe em casa, principalmente esfiha. Mas as receitas são tão bem explicadas que consegui fazer sem complicação. Ficou uma delícia e minha família adorou!" },
+  { nome: "Luiza S.", data: "22 de outubro de 2025", nota: 5, texto: "O que mais gostei foi a parte dos temperos! Antes eu tentava fazer quibe e nunca ficava com aquele gostinho de restaurante. Agora consigo seguir as quantidades certinhas. Valeu muito a pena!" },
+  { nome: "Karoline O.", data: "5 de agosto de 2025", nota: 5, texto: "Aqui em casa a gente ama comida árabe, mas pedir delivery toda hora pesava no bolso. Gostei muito da variedade de receitas e do passo a passo. Já tenho várias opções para fazer no fim de semana!" },
+  { nome: "Rose Pereira", data: "27 de outubro de 2026", nota: 5, texto: "Gente, eu nunca imaginei que conseguiria fazer pão sírio em casa kkk. Sempre achei que precisava de muita experiência. O passo a passo é bem fácil de entender e até meu marido ficou surpreso com o resultado!" },
+  { nome: "Aline Costa", data: "25 de outubro de 2026", nota: 5, texto: "Comprei mais pelas receitas de esfiha, mas acabei gostando de várias outras também. As medidas dos temperos ajudam demais! Fiz um jantar árabe aqui em casa e todo mundo ficou perguntando onde eu tinha aprendido kkk." },
 ];
 
 const reviewsSection = document.getElementById("depoimentos");
@@ -112,7 +117,10 @@ if (reviewsSection && DEPOIMENTOS.length) {
     who.append(el("b", "", d.nome), el("small", "", d.data || ""));
     const author = el("div", "review-author");
     author.append(avatar, who);
-    card.append(el("div", "review-stars", stars(d.nota)), author, el("p", "", d.texto));
+    const actions = el("div", "review-actions");
+    actions.append(el("span", "", "👍 Curtir"), el("span", "", "Comentar"), el("span", "", "Compartilhar"));
+    actions.setAttribute("aria-hidden", "true");
+    card.append(author, el("p", "", d.texto), actions);
     if (d.foto) {
       const img = el("img");
       img.src = d.foto;

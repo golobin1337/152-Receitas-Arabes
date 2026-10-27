@@ -304,3 +304,15 @@ footer p + p { margin-top: 4px; }
   .carousel-chat .slide:first-child { margin-left: auto; }
   .carousel-chat .slide:last-child { margin-right: auto; }
 }
+
+/* Depoimentos no estilo de comentários */
+.reviews-grid { grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; gap: 14px; }
+.review { padding: 18px 18px 12px; gap: 10px; border: 1px solid var(--line); box-shadow: 0 1px 3px rgba(0, 0, 0, .06); border-radius: 16px; }
+.review-author b { font-size: 15px; }
+.review p { color: var(--ink); font-size: 15px; line-height: 1.55; }
+.review-actions { display: flex; gap: 20px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 13px; font-weight: 600; color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .reviews-grid { grid-template-columns: 1fr; gap: 12px; }
+  .review { padding: 16px 16px 10px; }
+  .review-actions { gap: 16px; }
+}
