@@ -170,10 +170,10 @@ footer p + p { margin-top: 4px; }
 }
 .sticky-cta.show { translate: 0 0; }
 .sticky-info { min-width: 0; display: grid; line-height: 1.25; }
-.sticky-info b { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.sticky-info small { font-size: 12px; color: #cfe8d9; }
-.sticky-info small s { color: #cfe8d9; }
-.sticky-info strong { font-size: 19px; font-weight: 800; color: #b8f5cf; }
+.sticky-info b { font-size: 14px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sticky-info small { font-size: 12px; color: #fff; }
+.sticky-info small s { color: #fff; opacity: .8; }
+.sticky-info strong { font-size: 19px; font-weight: 800; color: #fff; }
 .sticky-btn {
   flex-shrink: 0; background: #fff; color: #146c3c; text-decoration: none; text-transform: uppercase;
   font-weight: 800; font-size: 14px; letter-spacing: .02em; padding: 14px 18px; border-radius: 12px;
